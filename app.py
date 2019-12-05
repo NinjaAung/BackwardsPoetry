@@ -4,11 +4,9 @@ from colorama import Fore, Back, Style
 
 
 
-mypoem = '''
-The Moving Finger writes; and, having writ, Moves on:
+mypoem = '''The Moving Finger writes; and, having writ, Moves on:
 nor all thy Piety nor Wit. Shall lure it back to cancel half a Line, 
-Nor all thy Tears wash out a Word of it.
-'''
+Nor all thy Tears wash out a Word of it.'''
 
 
 
@@ -44,6 +42,7 @@ def lines_printed_random(words):
 
 def lines_printed(lines):
 
+    lines.reverse()
     print(Fore.RED + "\nReversed ----> \n" + Fore.RESET)
 
     for poem in lines:
@@ -54,15 +53,29 @@ def lines_printed(lines):
 
 def main(option, poem):
     if option == "1":
-        print("not available yet")
-    elif option == "2":
+        num_line = 1
+        line_num = int(input("How many lines do you have: "))
+        line = []
+        
+        while line_num > 0:
+            line.append(input(f'{num_line}. '))
+            num_line += 1
+            line_num -= 1
         print()
-        poem_name = input("Name of the file with ext. (example.txt): ")
+
+        for poem_c in line:
+            print(poem_c)
+
+        lines_printed(line)
+
+        
+            
+    elif option == "2":
+        poem_name = input("\nName of the file with ext. (example.txt): ")
         print()
 
         poem_file = open(poem_name, "r")
         poem_lines = poem_file.readlines()
-        poem_lines.reverse()
 
         with open(poem_name, 'r') as fin:
             print(fin.read())
@@ -75,37 +88,11 @@ def main(option, poem):
 
 
         lines = poem.split("\n")
-        lines.reverse()
-
         lines_printed(lines)
-
-        print(Fore.RED + "Mixed up ----> \n" + Fore.RESET)
 
 
     else:
         print("That's not a option goodbye")
-
-
-
-
-
-# playlistfilename = "playlist1.txt"
-# playlist_file = open(playlistfilename, "r")
-# playlist_lines = playlist_file.readlines()
-
-# artistfilename = "artists.txt"
-# artist_file = open(artistfilename, "r")
-# artist_lines = artist_file.readlines()
-
-# song_dic = {}
-
-# for (song, artist) in zip(playlist_lines, artist_lines):
-#   song_dic[song] = artist
-  
-# print(song_dic)
-
-
-
 
 
 
