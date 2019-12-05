@@ -6,6 +6,6 @@ In this project we will write a Python program to print out poetry backwards, ra
 Credit to Mark D. LeBlanc for their project posted on EngageCSEdu
 
 ## Goal
-- [ ] Modify your program to read the poem from a file
-- [ ] Modify your program to read the poem from user input
-- [ ] Modify your program to randomly rearrange the words on each line
+- [x] Modify your program to read the poem from a file
+- [x] Modify your program to read the poem from user input
+- [x] Modify your program to randomly rearrange the words on each line
