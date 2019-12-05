@@ -1,10 +1,34 @@
-testpoem = '''The Moving Finger writes; and, having writ, Moves on: 
-nor all thy Piety nor Wit. Shall lure it back to cancel half a Line, 
-Nor all thy Tears wash out a Word of it.'''
+import random
+import os
+from colorama import Fore, Back, Style
 
 
-lines = testpoem.split("\n")
-lines.reverse()
 
-for poem in lines:
-    print(poem)
+
+
+
+banner = '''
+__________                                        
+\______   \ _______  __ ___________  ______ ____  
+ |       _// __ \  \/ // __ \_  __ \/  ___// __ \ 
+ |    |   \  ___/\   /\  ___/|  | \/\___ \\  ___/ 
+ |____|_  /\___  >\_/  \___  >__|  /____  >\___  >
+        \/     \/          \/           \/     \/ 
+'''
+
+os. system('clear')
+print("_" * 55 + Fore.BLUE + banner + Fore.RESET + "_" * 55)
+
+
+
+def options():
+    return
+
+
+def main(poem):
+    global lines
+    lines = poem.split("\n")
+    lines.reverse()
+
+    for poem in lines:
+        print(poem)
