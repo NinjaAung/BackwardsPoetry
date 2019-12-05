@@ -4,6 +4,7 @@ Nor all thy Tears wash out a Word of it.'''
 
 
 lines = testpoem.split("\n")
-lines.reverse
+lines.reverse()
 
-print(lines)
+for poem in lines:
+    print(poem)
