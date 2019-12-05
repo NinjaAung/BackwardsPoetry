@@ -42,33 +42,67 @@ def lines_printed_random(words):
         line_index = random.randint(1, random_lines-1)
         print(words[line_index] + "\n")
 
+def lines_printed(lines):
 
+    print(Fore.RED + "\nReversed ----> \n" + Fore.RESET)
 
+    for poem in lines:
+            print(Fore.BLUE + poem + "\n" + Fore.RESET)
+
+    print(Fore.RED + "Mixed up ----> \n" + Fore.RESET)
+    lines_printed_random(lines)
 
 def main(option, poem):
     if option == "1":
         print("not available yet")
     elif option == "2":
-        print("asd")
-    elif option == "3":
+        print()
+        poem_name = input("Name of the file with ext. (example.txt): ")
+        print()
 
+        poem_file = open(poem_name, "r")
+        poem_lines = poem_file.readlines()
+        poem_lines.reverse()
+
+        with open(poem_name, 'r') as fin:
+            print(fin.read())
+        
+        lines_printed(poem_lines)
+        
+    elif option == "3":
+        print()
         print(poem + "\n")
-        print(Fore.RED + "Reversed ----> \n" + Fore.RESET)
+
 
         lines = poem.split("\n")
         lines.reverse()
 
-        for poem in lines:
-            print(poem + "\n")
+        lines_printed(lines)
 
         print(Fore.RED + "Mixed up ----> \n" + Fore.RESET)
-        lines_printed_random(lines)
 
 
     else:
         print("That's not a option goodbye")
 
 
+
+
+
+# playlistfilename = "playlist1.txt"
+# playlist_file = open(playlistfilename, "r")
+# playlist_lines = playlist_file.readlines()
+
+# artistfilename = "artists.txt"
+# artist_file = open(artistfilename, "r")
+# artist_lines = artist_file.readlines()
+
+# song_dic = {}
+
+# for (song, artist) in zip(playlist_lines, artist_lines):
+#   song_dic[song] = artist
+  
+# print(song_dic)
 
 
 
